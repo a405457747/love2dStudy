@@ -3,10 +3,8 @@
 --- Created by justi.
 --- DateTime: 2024/7/11 11:52
 ---
-
-
-
 function love.load()
+    love.window.setTitle("你好");
     img =love.graphics.newImage("someArts/red.png");
 end
 
