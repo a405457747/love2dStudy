@@ -1,4 +1,6 @@
 function love.load()
+    love.window.setTitle("你好");
+    love.window.setMode(300,300);
     target={
         x=300,
         y=300,
@@ -15,8 +17,7 @@ function love.load()
     sprites.target=love.graphics.newImage("sprites/target.png")
     sprites.crosshairs=love.graphics.newImage("sprites/crosshairs.png")
 
-    love.mouse.setVisible(false);
-    
+    --love.mouse.setVisible(true);
 end
 
 function love.update(dt)
@@ -31,6 +32,7 @@ function love.update(dt)
 end
 
 function love.draw()
+    love.graphics.print()
     love.graphics.draw(sprites.sky,0,0);
     love.graphics.setColor(1,1,1);
     love.graphics.setFont(gameFont);
