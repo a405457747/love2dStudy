@@ -5,9 +5,12 @@
 ---
 
 function love.load()
-    print("love load");
+    img =love.graphics.newImage("someArts/red.png");
 end
 
+function love.draw()
+    love.graphics.draw(img,0,0);
+end
 
 
 function love.update(dt)
