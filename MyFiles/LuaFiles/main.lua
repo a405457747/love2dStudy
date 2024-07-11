@@ -4,6 +4,8 @@
 --- DateTime: 2024/7/11 11:52
 ---
 
+
+
 function love.load()
     img =love.graphics.newImage("someArts/red.png");
 end
@@ -14,5 +16,5 @@ end
 
 
 function love.update(dt)
-    print(dt);
+   -- print(dt);
 end
