@@ -59,3 +59,21 @@ function Node:init(args)
         table.insert(G.STAGE_OBJECTS[G.STAGE],self);
     end
 end
+
+function Node:draw_boundingrect()
+    self.under_overlay=G.under_overlay;
+    if G.DEBUG then
+        local transform =self.VT or self.T;
+        love.graphics.push()
+        love.graphics.scale(G.TILESCALE,G.TILESCALE);
+        love.graphics.translate(transform.x*G.TILESIZE+transform.w*G.TILESIZE*0.5,
+                                transform.y*G.TILESIZE+transform.h*G.TILESIZE*.5);
+        love.graphics.rotate(transform.r);
+        love.graphics.translate(-transform.w*G,TILESIZE*0.5,-transform.h*G.TILESIZE*0.5);
+
+        if self.DEBUG_VALUE then
+            love.graphics.setColor(1,1,0,1);
+            love.graphics.print((self.DEBUG_VALUE or ''),transform.w*G.TILESIZE,transform.h*G.TILESIZE,nil,1/G.TILESCALE)
+        end
+    end
+end
