@@ -166,3 +166,13 @@ function string.rtrim(input)
     return string.gsub(input,"[ \t\n\r]+$","")
 end
 
+
+function string.formatnumberthousands(num)
+    local formatted=tostring(checknumber(num))
+    local k
+    while true do
+        formatted,k =string.gsub(formatted,"^(-?%d+)(%d%d%d)","%1,%2");
+        if k==0 then break end;
+    end
+    return formatted;
+end
