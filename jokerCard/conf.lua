@@ -4,8 +4,8 @@ _DEMO = false
 function love.conf(t)
 	t.console = not _RELEASE_MODE
 	t.title = 'Balatro'
-	t.window.width = 0
-    t.window.height = 0
-	t.window.minwidth = 100
-	t.window.minheight = 100
+	t.window.width = 800
+    t.window.height = 600
+	t.window.minwidth = 800
+	t.window.minheight = 600
 end 
