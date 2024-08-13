@@ -29,7 +29,7 @@ local function changeType(item,enum)
         return item;
     end
 end
-
+--enum是数据类型
 local function getArgs(enum,isOne)
     isOne =isOne or 1;
     enum =enum or 1;
@@ -154,19 +154,12 @@ end
 
 --debug();
 local function main()
-    
-
     local matrix={};
-    for i=1,2 do
-        matrix[i]=getArgs(1,1);
+    for i=1,1 do
+        matrix=getArgs(1,1);
     end
 
-    
-    local b =2;
-    b=b+1;
-    b=b+1;
-
-    printTable(matrix);
+    print(string.format("I am %d years old.",matrix));
 end
 
 main();
