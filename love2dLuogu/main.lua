@@ -1,10 +1,41 @@
+str =io.stdin:read("*line");
 
-function love.load()
-    love.graphics.setBackgroundColor(1,1,1);
-    local info =love.filesystem.getInfo("./main.lua");
-    print(info,type(info));
-end;
-function love.draw()
-    love.graphics.setColor(1,0,0);
-    love.graphics.points(0,0,20,20,10,10,0,0);
-end;
+local t ={}
+for item in str:gmatch("%S+") do
+    t[#t+1]=tonumber(item);
+end
+
+local function  isPrime(n)
+    if n<=1 then
+        return false;
+    end
+
+    for i=2,math.sqrt(n) do
+    
+        if(n%i==0)then
+            return false;
+        end
+    end
+
+    return true;
+
+end
+
+function reverse_number(n)
+    local reversed=0;
+    while n>0 do
+    
+        local digit =n%10;
+        reversed =reversed*10+digit;
+        n=math.floor(n/10);
+    end
+    return reversed;
+end
+
+local res ={}
+for i=t[1],t[2] do
+    if(isPrime(i) and isPrime( reverse_number(i))) then
+        res[#res+1]=i;
+    end
+end
+print(table.concat(res," "))
